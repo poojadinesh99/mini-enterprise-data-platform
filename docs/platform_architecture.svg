@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Platform architecture diagram">
+  <defs>
+    <style>
+      .title { font: 600 20px/1.2 'Segoe UI', Roboto, Arial; fill: #111827 }
+      .lane { fill: #111827; opacity: 0.03 }
+      .box { fill: #ffffff; stroke: #0f172a; stroke-width: 2; rx: 8 }
+      .box-alt { fill: #f8fafc; stroke: #0f172a; stroke-width: 1; rx: 8 }
+      .label { font: 600 13px/1 'Segoe UI', Roboto, Arial; fill: #0f172a }
+      .sub { font: 400 12px/1 'Segoe UI', Roboto, Arial; fill: #4b5563 }
+      .arrow { stroke: #0f172a; stroke-width: 2; fill: none; marker-end: url(#arrowhead) }
+      .dashed { stroke-dasharray: 6 6; opacity: 0.8 }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#0f172a" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="40" y="40" class="title">Platform architecture — logical flow</text>
+
+  <!-- Main flow boxes -->
+  <g transform="translate(60,80)">
+    <!-- Data Sources -->
+    <rect class="box" x="0" y="0" width="180" height="60" />
+    <text x="90" y="34" text-anchor="middle" class="label">Data Sources</text>
+    <text x="90" y="50" text-anchor="middle" class="sub">(APIs, DBs, files)</text>
+
+    <!-- Ingestion -->
+    <rect class="box" x="240" y="0" width="180" height="60" />
+    <text x="330" y="28" text-anchor="middle" class="label">Ingestion</text>
+    <text x="330" y="46" text-anchor="middle" class="sub">(Python pipelines)</text>
+
+    <!-- Bronze -->
+    <rect class="box" x="480" y="0" width="160" height="60" />
+    <text x="560" y="28" text-anchor="middle" class="label">Bronze</text>
+    <text x="560" y="46" text-anchor="middle" class="sub">Raw landing</text>
+
+    <!-- Silver -->
+    <rect class="box" x="680" y="0" width="160" height="60" />
+    <text x="760" y="28" text-anchor="middle" class="label">Silver</text>
+    <text x="760" y="46" text-anchor="middle" class="sub">Cleaned & modeled</text>
+
+    <!-- Gold -->
+    <rect class="box" x="880" y="0" width="160" height="60" />
+    <text x="960" y="28" text-anchor="middle" class="label">Gold</text>
+    <text x="960" y="46" text-anchor="middle" class="sub">KPIs / Semantic layer</text>
+
+    <!-- BI / API -->
+    <rect class="box-alt" x="1040" y="0" width="120" height="60" />
+    <text x="1100" y="30" text-anchor="middle" class="label">BI / API</text>
+
+    <!-- Arrows between main flow -->
+    <path class="arrow" d="M180 30 L240 30" />
+    <path class="arrow" d="M420 30 L480 30" />
+    <path class="arrow" d="M640 30 L680 30" />
+    <path class="arrow" d="M840 30 L880 30" />
+    <path class="arrow" d="M1040 30 L1040 30" />
+    <path class="arrow" d="M1040 30 L1040 30" />
+    <path class="arrow" d="M1040 30 L1040 30" />
+    <path class="arrow" d="M1040 30 L1120 30" />
+  </g>
+
+  <!-- Side layers (Governance, RBAC, Data Quality, CI/CD) -->
+  <g transform="translate(60,190)">
+    <rect class="box-alt" x="0" y="0" width="250" height="46" />
+    <text x="12" y="30" class="label">Governance</text>
+    <text x="12" y="44" class="sub">Policies, ownership, audit</text>
+
+    <rect class="box-alt" x="280" y="0" width="200" height="46" />
+    <text x="290" y="30" class="label">RBAC</text>
+    <text x="290" y="44" class="sub">Roles, permissions, reviews</text>
+
+    <rect class="box-alt" x="520" y="0" width="220" height="46" />
+    <text x="530" y="30" class="label">Data Quality</text>
+    <text x="530" y="44" class="sub">Checks, alerts, remediation</text>
+
+    <rect class="box-alt" x="770" y="0" width="240" height="46" />
+    <text x="780" y="30" class="label">CI/CD (future)</text>
+    <text x="780" y="44" class="sub">Automated tests & deployments</text>
+
+    <!-- Dashed connectors to main flow -->
+    <path class="arrow dashed" d="M270 0 L330 -70" marker-end="url(#arrowhead)" />
+    <path class="arrow dashed" d="M400 0 L600 -70" marker-end="url(#arrowhead)" />
+    <path class="arrow dashed" d="M640 0 L840 -70" marker-end="url(#arrowhead)" />
+    <path class="arrow dashed" d="M940 0 L920 -140" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- Footer legend -->
+  <g transform="translate(40,520)">
+    <text class="sub">Diagram: logical data flow — Data Sources → Ingestion → Bronze → Silver → Gold → BI/API. Side layers indicate cross-cutting concerns.</text>
+  </g>
+</svg>
