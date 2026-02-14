@@ -1,5 +1,10 @@
 # Mini Enterprise Data Platform
 
+![Platform Architecture](docs/platform_architecture.png)
+
+Architecture first.
+Code second.
+
 A compact, opinionated starter for building an internal data platform (ingestion, transformation, warehouse, and governance).
 
 Purpose
