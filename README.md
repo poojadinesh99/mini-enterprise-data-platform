@@ -38,6 +38,4 @@ Support & governance
 --------------------
 Refer to `governance/data_governance_policy.md` for roles, SLAs, access‑review cadence, and GDPR guidance.
 
-License
--------
-Proprietary to the organization (add a LICENSE file if public distribution is intended).
+
