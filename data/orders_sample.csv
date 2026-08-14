@@ -1,0 +1,11 @@
+order_id,customer_email,supplier_name,product_category,order_amount,order_date,delivery_date,status
+1001,alice@example.com,Northwind Supplies,Electronics,249.99,2026-01-05,2026-01-09,DELIVERED
+1002,bob@example.com,Contoso Parts,Office,89.50,2026-01-06,2026-01-08,DELIVERED
+1003,alice@example.com,Fabrikam Logistics,Electronics,1250.00,2026-01-10,2026-01-20,DELIVERED
+1004,carol@example.com,Northwind Supplies,Furniture,430.00,2026-01-12,,PENDING
+1005,bob@example.com,Contoso Parts,Office,15.25,2026-01-13,2026-01-14,DELIVERED
+1006,dave@example.com,Fabrikam Logistics,Electronics,599.99,2026-01-15,2026-01-19,DELIVERED
+1007,alice@example.com,Northwind Supplies,Furniture,275.00,2026-01-16,,CANCELLED
+1008,carol@example.com,Contoso Parts,Office,42.00,2026-01-18,2026-01-19,DELIVERED
+1009,dave@example.com,Fabrikam Logistics,Electronics,899.00,2026-01-20,2026-01-25,DELIVERED
+1010,bob@example.com,Northwind Supplies,Furniture,120.75,2026-01-21,2026-01-23,DELIVERED
