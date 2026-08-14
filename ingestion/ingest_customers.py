@@ -3,11 +3,11 @@ Enterprise-style Bronze ingestion script for customers.
 Creates bronze.customers_raw and inserts raw rows.
 """
 
-from sqlalchemy import text
-import os
 import csv
+import os
 
 from db import engine
+from sqlalchemy import text
 
 DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "customers.csv")
 

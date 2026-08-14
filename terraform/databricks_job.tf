@@ -6,7 +6,7 @@
 resource "databricks_cluster" "etl_cluster" {
   cluster_name            = "etl-cluster-${var.environment}"
   spark_version           = "15.4.x-scala2.12"
-  node_type_id             = "Standard_DS3_v2"
+  node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 20
   num_workers             = 1
 
@@ -28,7 +28,7 @@ resource "databricks_job" "etl_pipeline" {
   }
 
   task {
-    task_key = "ingest_bronze"
+    task_key        = "ingest_bronze"
     job_cluster_key = "etl"
     spark_python_task {
       python_file = "/Repos/mini-enterprise-data-platform/spark/ingest_bronze.py"
@@ -36,7 +36,7 @@ resource "databricks_job" "etl_pipeline" {
   }
 
   task {
-    task_key = "transform_silver"
+    task_key        = "transform_silver"
     job_cluster_key = "etl"
     depends_on {
       task_key = "ingest_bronze"
@@ -47,7 +47,7 @@ resource "databricks_job" "etl_pipeline" {
   }
 
   task {
-    task_key = "build_gold_star_schema"
+    task_key        = "build_gold_star_schema"
     job_cluster_key = "etl"
     depends_on {
       task_key = "transform_silver"
@@ -59,6 +59,6 @@ resource "databricks_job" "etl_pipeline" {
 
   schedule {
     quartz_cron_expression = "0 0 3 * * ?" # daily at 03:00
-    timezone_id             = "Europe/Berlin"
+    timezone_id            = "Europe/Berlin"
   }
 }

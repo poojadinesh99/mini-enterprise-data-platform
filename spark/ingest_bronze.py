@@ -14,15 +14,14 @@ for the job/cluster definition), with DELTA_ROOT pointing at the ADLS mount.
 import logging
 import os
 
+from config import BRONZE_PATH, get_spark
 from pyspark.sql import functions as F
 from pyspark.sql.types import (
+    DoubleType,
     StringType,
     StructField,
     StructType,
-    DoubleType,
 )
-
-from config import BRONZE_PATH, get_spark
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)

@@ -7,11 +7,10 @@ semantics so re-runs are idempotent.
 """
 import logging
 
+from config import BRONZE_PATH, SILVER_PATH, get_spark
 from delta.tables import DeltaTable
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
-
-from config import BRONZE_PATH, SILVER_PATH, get_spark
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)

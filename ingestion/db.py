@@ -1,6 +1,7 @@
 """Creation of a SQLAlchemy Engine for the local Postgres used in docker-compose."""
-from sqlalchemy import create_engine
 import os
+
+from sqlalchemy import create_engine
 
 # read from environment with sensible defaults that match your docker-compose .env
 DB_USER = os.getenv("POSTGRES_USER", "platform_user")

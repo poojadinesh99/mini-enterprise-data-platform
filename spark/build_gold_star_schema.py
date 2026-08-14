@@ -11,9 +11,8 @@ Produces:
 """
 import logging
 
-from pyspark.sql import functions as F
-
 from config import GOLD_PATH, SILVER_PATH, get_spark
+from pyspark.sql import functions as F
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)

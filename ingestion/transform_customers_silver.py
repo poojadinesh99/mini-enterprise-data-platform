@@ -5,8 +5,8 @@ Reads from bronze.customers_raw
 Creates structured silver.customers_clean dimension table.
 """
 
-from sqlalchemy import text
 from db import engine
+from sqlalchemy import text
 
 
 def main():
